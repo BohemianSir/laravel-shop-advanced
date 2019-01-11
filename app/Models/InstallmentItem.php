@@ -1,7 +1,6 @@
 <?php
 namespace App\Models;
 
-use Moontoast\Math\BigNumber;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
