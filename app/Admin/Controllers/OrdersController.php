@@ -2,6 +2,7 @@
 
 namespace App\Admin\Controllers;
 
+use App\Services\OrderService;
 use App\Exceptions\InternalException;
 use App\Models\Order;
 use Illuminate\Http\Request;
@@ -104,7 +105,7 @@ class OrdersController extends Controller
         });
     }
 
-    public function handleRefund(Order $order, HandleRefundRequest $request)
+    public function handleRefund(Order $order, HandleRefundRequest $request, OrderService $orderService)
     {
         // 判断订单状态是否正确
         if ($order->refund_status !== Order::REFUND_STATUS_APPLIED) {
